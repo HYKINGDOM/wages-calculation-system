@@ -8,6 +8,7 @@ import static com.company.wages.calculation.system.constant.SalaryEmpWageConstan
 import static com.company.wages.calculation.system.constant.SaleEmpWageConstant.*;
 import static com.company.wages.calculation.system.constant.SaleEmpWageConstant.FIXED_SALE_WAGES_ROYALTY_RATE_02;
 import static com.company.wages.calculation.system.util.EmpWelfareUtil.birthdayWelfareUtil;
+import static com.company.wages.calculation.system.util.EmpWelfareUtil.birthdayWelfareUtilDate;
 
 /**
  * 员工类型
@@ -19,20 +20,20 @@ public enum EmployeeTypeServiceImpl implements EmployeeTypeService {
     /**
      * 固定工资员工
      */
-    salary{
+    salary {
         @Override
-        public double employeeTypeWageCalculation(String type, Employee employee) {
-            return birthdayWelfareUtil(employee.getBirthday()) + FIXED_WAGES;
+        public double employeeTypeWageCalculation(String month, Employee employee) {
+            return birthdayWelfareUtilDate(month, employee.getBirthday()) + FIXED_WAGES;
         }
     },
 
     /**
      * 小时工
      */
-    hour{
+    hour {
         @Override
-        public double employeeTypeWageCalculation(String type, Employee employee) {
-            double amount = birthdayWelfareUtil(employee.getBirthday());
+        public double employeeTypeWageCalculation(String month, Employee employee) {
+            double amount = birthdayWelfareUtilDate(month, employee.getBirthday());
             double workingHours = employee.getWorkingHours();
             double exceedingTime = workingHours - FIXED_HOURLY_WAGE;
             if (exceedingTime > 0) {
@@ -46,10 +47,10 @@ public enum EmployeeTypeServiceImpl implements EmployeeTypeService {
     /**
      * 销售人员
      */
-    sale{
+    sale {
         @Override
-        public double employeeTypeWageCalculation(String type, Employee employee) {
-            double amountWage = birthdayWelfareUtil(employee.getBirthday());
+        public double employeeTypeWageCalculation(String month, Employee employee) {
+            double amountWage = birthdayWelfareUtilDate(month, employee.getBirthday());
             double amount = employee.getAmount();
 
             if (amount <= FIXED_SALE_VOLUME_WAGES_01) {

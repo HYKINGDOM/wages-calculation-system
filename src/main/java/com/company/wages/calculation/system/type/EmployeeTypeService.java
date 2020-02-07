@@ -6,8 +6,8 @@ public interface EmployeeTypeService {
 
     /**
      * 计算员工类型方法
-     * @param type
+     * @param month
      * @return
      */
-    double employeeTypeWageCalculation(String type, Employee employeeType);
+    double employeeTypeWageCalculation(String month, Employee employeeType);
 }

@@ -26,7 +26,8 @@ public class TestCalculation {
             List<Employee> value = entry.getValue();
             for (Employee employee : value) {
                 String type = employee.getType().trim();
-                amount = amount + EmployeeTypeServiceImpl.valueOf(type).employeeTypeWageCalculation(type, employee);
+                String month = entry.getKey();
+                amount = amount + EmployeeTypeServiceImpl.valueOf(type).employeeTypeWageCalculation(month, employee);
             }
         }
         System.out.println("9月和10月份，公司应支付员工工资总额为:" + doubleKeepTwoDecimalPlaces(amount));
