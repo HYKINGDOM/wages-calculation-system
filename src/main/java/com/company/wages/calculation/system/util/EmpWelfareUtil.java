@@ -27,7 +27,12 @@ public class EmpWelfareUtil {
         return 0;
     }
 
-
+    /**
+     * 计算员工正确的生日福利
+     * @param month
+     * @param date
+     * @return
+     */
     public static double birthdayWelfareUtilDate(String month, Date date) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
