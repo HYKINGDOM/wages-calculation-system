@@ -8,14 +8,29 @@ import java.util.Date;
  */
 public class Employee {
 
+    /**
+     *  员工姓名
+     */
     private String name;
 
+    /**
+     * 员工类型
+     */
     private String type;
 
+    /**
+     * 员工工时
+     */
     private double workingHours;
 
+    /**
+     * 销售总额
+     */
     private double amount;
 
+    /**
+     *  员工生日
+     */
     private Date birthday;
 
 

@@ -1,28 +1,27 @@
-package com.company.wages.calculation.system.type;
+package com.company.wages.calculation.system.service;
 
 import com.company.wages.calculation.system.domain.Employee;
 
-import static com.company.wages.calculation.system.constant.HourEmpWageConstant.*;
-import static com.company.wages.calculation.system.constant.HourEmpWageConstant.HOURLY_WAGE;
-import static com.company.wages.calculation.system.constant.SalaryEmpWageConstant.FIXED_WAGES;
-import static com.company.wages.calculation.system.constant.SaleEmpWageConstant.*;
-import static com.company.wages.calculation.system.constant.SaleEmpWageConstant.FIXED_SALE_WAGES_ROYALTY_RATE_02;
-import static com.company.wages.calculation.system.util.EmpWelfareUtil.birthdayWelfareUtil;
-import static com.company.wages.calculation.system.util.EmpWelfareUtil.birthdayWelfareUtilDate;
+import static com.company.wages.calculation.system.constant.EmpHourWageConstant.*;
+import static com.company.wages.calculation.system.constant.EmpHourWageConstant.HOURLY_WAGE;
+import static com.company.wages.calculation.system.constant.EmpSalaryWageConstant.FIXED_WAGES;
+import static com.company.wages.calculation.system.constant.EmpSaleWageConstant.*;
+import static com.company.wages.calculation.system.constant.EmpSaleWageConstant.FIXED_SALE_WAGES_ROYALTY_RATE_02;
+import static com.company.wages.calculation.system.util.EmpWagesUtil.birthdayWelfareUtilDate;
 
 /**
  * 员工类型
  *
  * @author hy
  */
-public enum EmployeeTypeServiceImpl implements EmployeeTypeService {
+public enum EmpTypeServiceImpl implements EmpTypeService {
 
     /**
      * 固定工资员工
      */
     salary {
         @Override
-        public double employeeTypeWageCalculation(String month, Employee employee) {
+        public double employeeTypeWageCalculation(Integer month, Employee employee) {
             return birthdayWelfareUtilDate(month, employee.getBirthday()) + FIXED_WAGES;
         }
     },
@@ -32,7 +31,7 @@ public enum EmployeeTypeServiceImpl implements EmployeeTypeService {
      */
     hour {
         @Override
-        public double employeeTypeWageCalculation(String month, Employee employee) {
+        public double employeeTypeWageCalculation(Integer month, Employee employee) {
             double amount = birthdayWelfareUtilDate(month, employee.getBirthday());
             double workingHours = employee.getWorkingHours();
             double exceedingTime = workingHours - FIXED_HOURLY_WAGE;
@@ -49,7 +48,7 @@ public enum EmployeeTypeServiceImpl implements EmployeeTypeService {
      */
     sale {
         @Override
-        public double employeeTypeWageCalculation(String month, Employee employee) {
+        public double employeeTypeWageCalculation(Integer month, Employee employee) {
             double amountWage = birthdayWelfareUtilDate(month, employee.getBirthday());
             double amount = employee.getAmount();
 

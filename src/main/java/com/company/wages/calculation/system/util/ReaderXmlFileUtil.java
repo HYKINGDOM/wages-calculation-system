@@ -1,6 +1,8 @@
 package com.company.wages.calculation.system.util;
 
 import com.company.wages.calculation.system.domain.Employee;
+import com.company.wages.calculation.system.domain.EmployeeTotal;
+import com.company.wages.calculation.system.service.EmpTypeServiceImpl;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -23,9 +25,9 @@ public class ReaderXmlFileUtil {
      *
      * @return
      */
-    public Map<String, List<Employee>> readerXmlFile() {
+    public List<EmployeeTotal> readerXmlFile() {
         SAXReader saxReader = new SAXReader();
-        Map<String, List<Employee>> listMap = new HashMap<>();
+        List<EmployeeTotal> employeeTotals = new ArrayList<>();
         try {
             //读取xml文件，并生成document对象 现可通过document来操作文档
             Document document = saxReader.read("src/main/resources/department.xml");
@@ -39,6 +41,7 @@ public class ReaderXmlFileUtil {
                 //获取子节点的下一级节点
                 Iterator iterator = fistChild.elementIterator();
                 List<Employee> employeeList = new ArrayList<>();
+                EmployeeTotal employeeTotal = new EmployeeTotal();
                 while (iterator.hasNext()) {
                     Employee employee = new Employee();
                     Element element = (Element) iterator.next();
@@ -46,19 +49,21 @@ public class ReaderXmlFileUtil {
                     employee.setBirthday(SIMPLE_DATE_FORMAT.parse(element.attributeValue("birthday")));
                     String type = element.attributeValue("type");
                     employee.setType(type);
-                    if (EmployeeType.sale.toString().equals(type)) {
+                    if (EmpTypeServiceImpl.sale.toString().equals(type)) {
                         employee.setAmount(Double.parseDouble(element.attributeValue("amount")));
                     }
-                    if (EmployeeType.hour.toString().equals(type)) {
+                    if (EmpTypeServiceImpl.hour.toString().equals(type)) {
                         employee.setWorkingHours(Double.parseDouble(element.attributeValue("workingHours")));
                     }
                     employeeList.add(employee);
                 }
-                listMap.put(valueMonth, employeeList);
+                employeeTotal.setMonth(Integer.parseInt(valueMonth));
+                employeeTotal.setEmployeeList(employeeList);
+                employeeTotals.add(employeeTotal);
             }
         } catch (DocumentException | ParseException e) {
             e.printStackTrace();
         }
-        return listMap;
+        return employeeTotals;
     }
 }

@@ -1,11 +1,11 @@
-package com.company.wages.calculation.system.type;
+package com.company.wages.calculation.system.service;
 
 import com.company.wages.calculation.system.domain.Employee;
 
 /**
  * @author hy
  */
-public interface EmployeeTypeService {
+public interface EmpTypeService {
 
     /**
      * 根据不同胡员工类型计算员工薪资
@@ -13,5 +13,5 @@ public interface EmployeeTypeService {
      * @param employeeType
      * @return
      */
-    double employeeTypeWageCalculation(String month, Employee employeeType);
+    double employeeTypeWageCalculation(Integer month, Employee employeeType);
 }

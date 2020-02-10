@@ -4,7 +4,7 @@ package com.company.wages.calculation.system.constant;
  * 固定工资员工工资常量
  * @author hy
  */
-public class SalaryEmpWageConstant {
+public class EmpSalaryWageConstant {
 
     /**
      * 固定工资员工每月固定工资
