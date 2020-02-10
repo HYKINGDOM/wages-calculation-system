@@ -19,8 +19,9 @@ public class EmpWagesUtil {
 
     /**
      * 计算员工薪资方法
-     * @param listMap
-     * @return
+     *
+     * @param listMap 员工数据
+     * @return 返回所有员工的工资并保留两位小数
      */
     public static double empWagesCount(List<EmployeeTotal> listMap) {
         double amount = 0;
@@ -37,9 +38,9 @@ public class EmpWagesUtil {
     /**
      * 计算员工在数据中的生日福利
      *
-     * @param month
-     * @param date
-     * @return
+     * @param month 工资月份
+     * @param date  员工生日
+     * @return 如果生日和月份相匹配返回100生日福利反之则返回0
      */
     public static double birthdayWelfareUtilDate(Integer month, Date date) {
         Calendar cal = Calendar.getInstance();

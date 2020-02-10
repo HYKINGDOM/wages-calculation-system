@@ -9,7 +9,9 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.text.ParseException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static com.company.wages.calculation.system.util.CommonUtils.SIMPLE_DATE_FORMAT;
 
@@ -23,7 +25,7 @@ public class ReaderXmlFileUtil {
     /**
      * 读取XML文件,组装返回读取数据
      *
-     * @return
+     * @return 返回所有员工的数据
      */
     public List<EmployeeTotal> readerXmlFile() {
         SAXReader saxReader = new SAXReader();

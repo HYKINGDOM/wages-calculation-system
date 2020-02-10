@@ -16,7 +16,7 @@ public class CommonUtils {
 
     /**
      * double 四舍五入保留两位小数
-     * @return
+     * @return 返回四舍五入保留两位小数的结果
      */
     public static double doubleKeepTwoDecimalPlaces(double amount){
         BigDecimal bigDecimal = new BigDecimal(amount);

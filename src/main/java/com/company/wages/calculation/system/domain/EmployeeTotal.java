@@ -9,8 +9,14 @@ import java.util.List;
  */
 public class EmployeeTotal {
 
+    /**
+     * 工资月份
+     */
     private Integer month;
 
+    /**
+     *  员工数据
+     */
     private List<Employee> employeeList;
 
     public Integer getMonth() {

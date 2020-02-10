@@ -1,15 +1,10 @@
 package com.company.wages.calculation.system;
 
-import com.company.wages.calculation.system.domain.Employee;
 import com.company.wages.calculation.system.domain.EmployeeTotal;
-import com.company.wages.calculation.system.service.EmpTypeServiceImpl;
 import com.company.wages.calculation.system.util.ReaderXmlFileUtil;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-import static com.company.wages.calculation.system.util.CommonUtils.doubleKeepTwoDecimalPlaces;
 import static com.company.wages.calculation.system.util.EmpWagesUtil.empWagesCount;
 
 /**

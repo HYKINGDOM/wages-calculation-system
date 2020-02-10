@@ -20,6 +20,12 @@ public enum EmpTypeServiceImpl implements EmpTypeService {
      * 固定工资员工
      */
     salary {
+        /**
+         *  固定工资人员计算
+         * @param month 工资月份
+         * @param employee  固定工资人员
+         * @return 计算所得工资
+         */
         @Override
         public double employeeTypeWageCalculation(Integer month, Employee employee) {
             return birthdayWelfareUtilDate(month, employee.getBirthday()) + FIXED_WAGES;
@@ -30,6 +36,12 @@ public enum EmpTypeServiceImpl implements EmpTypeService {
      * 小时工
      */
     hour {
+        /**
+         * 小时工工资计算
+         * @param month 工资月份
+         * @param employee 小时工人员
+         * @return 计算所的工资
+         */
         @Override
         public double employeeTypeWageCalculation(Integer month, Employee employee) {
             double amount = birthdayWelfareUtilDate(month, employee.getBirthday());
@@ -47,6 +59,12 @@ public enum EmpTypeServiceImpl implements EmpTypeService {
      * 销售人员
      */
     sale {
+        /**
+         *  销售人员工资计算
+         * @param month 工资月份
+         * @param employee 销售人员
+         * @return 计算所的工资
+         */
         @Override
         public double employeeTypeWageCalculation(Integer month, Employee employee) {
             double amountWage = birthdayWelfareUtilDate(month, employee.getBirthday());
