@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.company.wages.calculation.system.util.CommonUtils.SIMPLE_DATE_FORMAT;
+import static com.company.wages.calculation.system.util.CommonUtil.SIMPLE_DATE_FORMAT;
 
 /**
  * 读取XML文件工具类

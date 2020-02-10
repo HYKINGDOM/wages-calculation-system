@@ -8,10 +8,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static com.company.wages.calculation.system.util.CommonUtils.doubleKeepTwoDecimalPlaces;
+import static com.company.wages.calculation.system.util.CommonUtil.doubleKeepTwoDecimalPlaces;
 
 /**
- * 员工福利j计算工具类
+ * 员工薪资计算工具类
  *
  * @author hy
  */

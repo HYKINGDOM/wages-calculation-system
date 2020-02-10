@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
  * 公共方法工具类
  * @author hy
  */
-public class CommonUtils {
+public class CommonUtil {
 
     /**
      * 格式化时间
