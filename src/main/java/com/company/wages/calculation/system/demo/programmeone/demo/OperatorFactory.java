@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmeone.demo;
+package com.company.wages.calculation.system.demo.programmeone.demo;
 
 import java.util.HashMap;
 import java.util.Map;

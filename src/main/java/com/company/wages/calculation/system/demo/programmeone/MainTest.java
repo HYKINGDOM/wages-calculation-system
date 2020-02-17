@@ -1,8 +1,7 @@
-package com.company.wages.calculation.system.programmeone;
+package com.company.wages.calculation.system.demo.programmeone;
 
 import com.company.wages.calculation.system.domain.Employee;
 import com.company.wages.calculation.system.domain.EmployeeTotal;
-import com.company.wages.calculation.system.service.EmpTypeServiceImpl;
 import com.company.wages.calculation.system.util.ReaderXmlFileUtil;
 
 import java.util.List;

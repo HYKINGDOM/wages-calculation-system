@@ -1,11 +1,7 @@
-package com.company.wages.calculation.system.programmeone;
-
-import com.company.wages.calculation.system.programmeone.demo.*;
-import jdk.nashorn.internal.runtime.options.Option;
+package com.company.wages.calculation.system.demo.programmeone;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class OperatorEmpFactory {
 

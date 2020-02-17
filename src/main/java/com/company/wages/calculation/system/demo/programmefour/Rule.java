@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmefour;
+package com.company.wages.calculation.system.demo.programmefour;
 
 public interface Rule {
     boolean evaluate(Expression expression);

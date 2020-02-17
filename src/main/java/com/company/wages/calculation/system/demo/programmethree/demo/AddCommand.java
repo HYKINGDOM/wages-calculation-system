@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmethree.demo;
+package com.company.wages.calculation.system.demo.programmethree.demo;
 
 public class AddCommand implements Command {
     private int a;

@@ -1,6 +1,6 @@
-package com.company.wages.calculation.system.programmefour;
+package com.company.wages.calculation.system.demo.programmefour;
 
-import com.company.wages.calculation.system.programmetwo.Operator;
+import com.company.wages.calculation.system.demo.programmetwo.Operator;
 
 public class Expression {
     private Integer x;

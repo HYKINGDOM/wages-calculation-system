@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmefour;
+package com.company.wages.calculation.system.demo.programmefour;
 
 public class Result {
     int value;

@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmetwo;
+package com.company.wages.calculation.system.demo.programmetwo;
 
 public enum Operator {
     ADD {

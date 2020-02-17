@@ -1,4 +1,4 @@
-package com.company.wages.calculation.system.programmeone;
+package com.company.wages.calculation.system.demo.programmeone;
 
 public class LazySimpleSinglton {
 
